@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="oPDT Action Set"
+            visible="true"
+            id="pl.com.openway.opdt.actionSet">
+         <action
+               class="pl.com.openway.opdt.actions.OpenNewPHPClassWizardAction"
+               icon="icons/newclass_wiz.gif"
+               id="pl.com.openway.opdt.actions.OpenNewPHPClassWizardAction"
+               label="&amp;New PHP Class Actiontion"
+               pulldown="true"
+               toolbarPath="opdtGroup"
+               tooltip="New PHP Class">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.php.project.ui"
+            class="pl.com.openway.opdt.wizards.NewPHPClassWizard"
+            icon="icons/newclass_wiz.gif"
+            id="pl.com.openway.opdt.wizards.NewPHPClassWizard"
+            name="PHP Class"
+            preferredPerspectives="org.eclipse.php.perspective">
+      </wizard>
+      <wizard
+            category="org.eclipse.php.project.ui"
+            class="pl.com.openway.opdt.wizards.NewPHPInterfaceWizard"
+            icon="icons/newint_wiz.gif"
+            id="pl.com.openway.opdt.wizards.NewPHPInterfaceWizard"
+            name="PHP Interface"
+            preferredPerspectives="org.eclipse.php.perspective">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.php.perspective">
+         <newWizardShortcut
+               id="pl.com.openway.opdt.wizards.NewPHPClassWizard">
+         </newWizardShortcut>
+         <newWizardShortcut
+               id="pl.com.openway.opdt.wizards.NewPHPInterfaceWizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
